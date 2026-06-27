@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ckb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pai.css">   
+    <title>داوای لێبوردن ئەشکم 🥺</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            direction: rtl;
+        }
+        h1 {
+            color: #d63031;
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            width: 300px;
+            justify-content: center;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        #yesBtn {
+            background-color: #ff7675;
+            color: white;
+        }
+        #noBtn {
+            background-color: #b2bec3;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>خەریکە دڵم پڕ دەبێت، لێم خۆش دەبیت؟ 💔</h1>
+
+    <div class="buttons">
+        <button id="yesBtn" onclick="accepted()">بەڵێ 🥰</button>
+        <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">نەخێر 😭</button>
+    </div>
+
+    <script>
+        // کاتێک مشکەکە دەچێتە سەر دوگمەی نەخێر، دوگمەکە ڕادەکات
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            
+            // دروستکردنی شوێنی هەڕەمەکی (Random) بۆ دوگمەکە
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 50);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 50);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        // کاتێک کلیک لەسەر بەڵێ دەکات
+        function accepted() {
+            alert('ئۆخەیش سوپاس! دەمزانی لە دادیی خۆو خۆش دەبیت هەموو ژیانی منننن ❤️');
+        }
+    </script>
+
+</body>
+</html>
